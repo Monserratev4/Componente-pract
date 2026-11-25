@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 48px 20px;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 860px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #162a4a;
+  margin-bottom: 42px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.titulo::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  background-color: #4472c4;
+  border-radius: 999px;
+  margin: 10px auto 0;
+}
+
+.tarjeta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+  min-height: 175px;
+  filter: drop-shadow(0 10px 20px rgba(22, 42, 74, 0.12));
+  transition: transform 0.25s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+}
+
+.foto-perfil {
+  position: relative;
+  width: 172px;
+  height: 172px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  outline: 2.5px solid #1f355e;
+  background-color: #e2e8f0;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+}
+
+.foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.banner {
+  position: relative;
+  flex: 1;
+  margin-left: -58px;
+  min-height: 152px;
+  background: linear-gradient(135deg, #4b7bd1 0%, #3862b0 100%);
+  color: #ffffff;
+  padding: 22px 34px 22px 78px;
+  display: flex;
+  align-items: center;
+  clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%);
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-left: 4px solid #93b5f5;
+  pointer-events: none;
+}
+
+.info h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+.info p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.info p:last-child {
+  margin-bottom: 0;
+}
+
+.info strong {
+  color: #dbeafe;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 32px 16px;
+  }
+
+  .tarjeta {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .foto-perfil {
+    width: 148px;
+    height: 148px;
+    margin-bottom: -46px;
+  }
+
+  .banner {
+    width: 100%;
+    margin-left: 0;
+    padding: 60px 22px 24px 22px;
+    text-align: center;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  }
+
+  .banner::before {
+    border-left: none;
+    border-top: 4px solid #93b5f5;
+  }
+}
